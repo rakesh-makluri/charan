@@ -1,0 +1,39 @@
+<div class="product-setup">
+  <add-new-product show="vm.showAddNewProduct"></add-new-product>
+  <div class="actions-container">
+    <select class="form-control" id="languagesList"
+      ng-model="vm.selectedCountry"
+      ng-options="c.country as c.country_code for c in vm.countriesList"
+      style="display:inline-block">
+    </select>
+    <button type="button" class="btn btn-danger right">Delete Product</button>
+    <button type="button" class="btn btn-success right"
+    ng-click="vm.showAddNewProduct = true;">Add a new Product</button>
+
+  </div>
+
+  <div class="countries-list">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Product Code</th>
+          <th>Source Codes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in vm.productsData">
+          <th scope="row">
+            <input type="radio">
+          </th>
+          <td ng-bind="p.product"></td>
+          <td ng-bind="p.product_code">Otto</td>
+          <td>
+            <span ng-repeat="s in p.source_codes">{{s + ' '}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+"use strict";angular.module("myApp",["ngRoute","myApp.view1","myApp.view2","myApp.version"]).config(["$locationProvider","$routeProvider",function(e,i){e.hashPrefix("!"),i.otherwise({redirectTo:"/view1"})}]);
+"use strict";angular.module("myApp.view1",["ngRoute"]).config(["$routeProvider",function(e){e.when("/view1",{templateUrl:"view1/view1.html",controller:"View1Ctrl"})}]).controller("View1Ctrl",[function(){}]);
+"use strict";describe("myApp.view1 module",function(){beforeEach(module("myApp.view1")),describe("view1 controller",function(){it("should ....",inject(function(e){var i=e("View1Ctrl");expect(i).toBeDefined()}))})});
+"use strict";angular.module("myApp.view2",["ngRoute"]).config(["$routeProvider",function(e){e.when("/view2",{templateUrl:"view2/view2.html",controller:"View2Ctrl"})}]).controller("View2Ctrl",[function(){}]);
+"use strict";describe("myApp.view2 module",function(){beforeEach(module("myApp.view2")),describe("view2 controller",function(){it("should ....",inject(function(e){var i=e("View2Ctrl");expect(i).toBeDefined()}))})});
+"use strict";angular.module("myApp.version.interpolate-filter",[]).filter("interpolate",["version",function(e){return function(r){return String(r).replace(/\%VERSION\%/gm,e)}}]);
+"use strict";describe("myApp.version module",function(){beforeEach(module("myApp.version")),describe("interpolate filter",function(){beforeEach(module(function(e){e.value("version","TEST_VER")})),it("should replace VERSION",inject(function(e){expect(e("before %VERSION% after")).toEqual("before TEST_VER after")}))})});
+"use strict";angular.module("myApp.version.version-directive",[]).directive("appVersion",["version",function(e){return function(i,n,r){n.text(e)}}]);
+"use strict";describe("myApp.version module",function(){beforeEach(module("myApp.version")),describe("app-version directive",function(){it("should print current version",function(){module(function(e){e.value("version","TEST_VER")}),inject(function(e,n){var i=e("<span app-version></span>")(n);expect(i.text()).toEqual("TEST_VER")})})})});
+"use strict";angular.module("myApp.version",["myApp.version.interpolate-filter","myApp.version.version-directive"]).value("version","0.1");
+"use strict";describe("myApp.version module",function(){beforeEach(module("myApp.version")),describe("version service",function(){it("should return current version",inject(function(e){expect(e).toEqual("0.1")}))})});
+//# sourceMappingURL=maps/main-004943c6e3.js.map

@@ -1,0 +1,33 @@
+<div class="countries-setup">
+  <add-new-country show="vm.showAddNewContry"></add-new-country>
+  <div class="actions-container clearfix">
+    <button type="button" class="btn btn-danger right">Delete Country</button>
+    <button type="button" class="btn btn-success right"
+      ng-click="vm.showAddNewContry = true;">Add a new Country</button>
+  </div>
+
+  <div class="countries-list">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Country</th>
+          <th>Country Code</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="d in vm.countriesData">
+          <th scope="row">
+            <input type="radio">
+          </th>
+          <td ng-bind="d.country"></td>
+          <td ng-bind="d.country_code"></td>
+          <td>
+            <span ng-repeat="ln in d.language"> {{ln + ' '}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  ng-if="vm.show" ng-class="{'in show': vm.show}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          ng-click="vm.show = false">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add a new Product</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">{{vm.country}}</label>
+            </div>
+            <div class="form-group row">
+              <label for="countryName" class="col-sm-2 col-form-label">Product Name</label>
+              <div class="col-sm-10">
+                <input type="input" class="form-control" id="countryName"
+                  placeholder="Enter Product Name Here">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="countryCode" class="col-sm-2 col-form-label">Product Code</label>
+              <div class="col-sm-10">
+                <input type="input" class="form-control" id="countryCode"
+                  placeholder="Enter Product Code Here">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2" for="languagesList">Source Codes:</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="languagesList"
+                  ng-model="vm.selectedSourceCode"
+                  ng-options="code.name as code for code in vm.sourceCodesList">
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Add New Source Code</button>
+        <button type="button" class="btn btn-success">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

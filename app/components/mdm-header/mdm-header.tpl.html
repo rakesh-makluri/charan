@@ -1,0 +1,21 @@
+<div class="mdm-header">
+  <div class="page-header">
+    <h1>Welcome to MDM</h1>
+  </div>
+  <div class="user-details">
+    Admin
+  </div>
+  <div class="mdm-nav-bar">
+    <div class="navbar navbar-inverse navbar-fixed-left">
+      <ul class="nav navbar-nav">
+       <li ng-class="{'selected': vm.$state.is('countries-setup')}">
+         <a ui-sref="countries-setup">Countries Setup</a>
+       </li>
+       <li ng-class="{'selected': vm.$state.is('product-setup')}">
+         <a ui-sref="product-setup">Product Setup</a>
+       </li>
+       <li><a>Benefits Setup</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

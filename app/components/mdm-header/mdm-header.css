@@ -1,0 +1,46 @@
+.navbar-fixed-left {
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  display: inline-block;
+  padding: 0px;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  padding: 15px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  position: relative;
+}
+
+.navbar-fixed-left .navbar-nav > li:first-child {
+  border-top: 2px solid black;
+}
+
+.navbar-fixed-left .navbar-nav > li.selected {
+  border-right: none;
+}
+
+.navbar-fixed-left .navbar-nav .selected::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 7px;
+  width: 41px;
+  height: 41px;
+  transform: rotate(45deg);
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
